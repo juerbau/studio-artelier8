@@ -25,6 +25,16 @@ export const postType = defineType({
     defineField({
       name: 'image',
       type: 'image',
+      options: {hotspot: true},
+    }),
+    defineField({
+      name: 'selection',
+      type: 'boolean'
+    }),
+    defineField({
+      name: 'details',
+      type: 'array',
+      of: [{type: 'image'}],
     }),
     defineField({
       name: 'body',
