@@ -1,8 +1,8 @@
 import {defineType, defineField} from 'sanity';
 
-export const seriesType = defineType({
-  name: 'series',
-  title: 'Series',
+export const artworkType = defineType({
+  name: 'artwork',
+  title: 'Artwork',
   type: 'document',
 
   fields: [
@@ -43,28 +43,72 @@ export const seriesType = defineType({
     }),
 
     defineField({
-      name: 'image',
-      title: 'Serienbild',
+      name: 'mainImage',
+      title: 'Hauptbild',
       type: 'image',
       options: {hotspot: true},
       validation: (Rule) => Rule.required(),
     }),
 
     defineField({
-      name: 'artworks',
-      title: 'Artworks dieser Serie',
+      name: 'galleryImages',
+      title: 'Detailbilder',
       type: 'array',
-      of: [{type: 'reference', to: [{type: 'artwork'}]}],
-      validation: (Rule) =>
-        Rule.unique().error('Ein Artwork darf nur einmal in dieser Liste vorkommen'),
-      description: 'Drag & Drop sortierbar',
+      of: [{type: 'image'}],
+    }),
+
+    defineField({
+      name: 'size',
+      title: 'Größe',
+      type: 'string',
+      description: 'z.B. 40 x 60 cm',
+    }),
+
+    defineField({
+      name: 'technique',
+      title: 'Technik',
+      type: 'string',
+    }),
+
+    defineField({
+      name: 'year',
+      title: 'Jahr',
+      type: 'number',
+    }),
+
+    defineField({
+      name: 'sold',
+      title: 'Verkauft',
+      type: 'boolean',
+      initialValue: false,
+    }),
+
+    defineField({
+      name: 'featured',
+      title: 'Featured Artwork',
+      type: 'boolean',
+      initialValue: false,
+    }),
+
+    defineField({
+      name: 'description_de',
+      title: 'Beschreibung (DE)',
+      type: 'text',
+      rows: 4,
+    }),
+
+    defineField({
+      name: 'description_en',
+      title: 'Description (EN)',
+      type: 'text',
+      rows: 4,
     }),
   ],
 
   preview: {
     select: {
       title: 'title_de',
-      media: 'image',
+      media: 'mainImage',
     },
   },
 });
