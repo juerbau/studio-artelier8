@@ -1,4 +1,4 @@
-import {defineType, defineField} from 'sanity';
+import {defineType, defineField} from 'sanity'
 
 export const seriesType = defineType({
   name: 'series',
@@ -27,18 +27,6 @@ export const seriesType = defineType({
       validation: (Rule) => Rule.required(),
       options: {
         source: 'title_en',
-        slugify: (input) =>
-          input
-            .toLowerCase()
-            .replace(/ä/g, 'ae')
-            .replace(/ö/g, 'oe')
-            .replace(/ü/g, 'ue')
-            .replace(/ß/g, 'ss')
-            .replace(/[^a-z0-9\s-]/g, '')
-            .replace(/\s+/g, '-')
-            .replace(/-+/g, '-')
-            .trim()
-            .slice(0, 200),
       },
     }),
 
@@ -54,9 +42,28 @@ export const seriesType = defineType({
       name: 'artworks',
       title: 'Artworks dieser Serie',
       type: 'array',
-      of: [{type: 'reference', to: [{type: 'artwork'}]}],
+
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'artwork'}],
+
+          options: {
+            disableNew: true,
+          },
+
+          preview: {
+            select: {
+              title: 'title',
+              media: 'mainImage',
+            },
+          },
+        },
+      ],
+
       validation: (Rule) =>
         Rule.unique().error('Ein Artwork darf nur einmal in dieser Liste vorkommen'),
+
       description: 'Drag & Drop sortierbar',
     }),
   ],
@@ -67,4 +74,4 @@ export const seriesType = defineType({
       media: 'image',
     },
   },
-});
+})

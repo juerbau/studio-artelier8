@@ -1,4 +1,4 @@
-import {defineType, defineField} from 'sanity';
+import {defineType, defineField} from 'sanity'
 
 export const artworkType = defineType({
   name: 'artwork',
@@ -7,15 +7,8 @@ export const artworkType = defineType({
 
   fields: [
     defineField({
-      name: 'title_de',
-      title: 'Titel (DE)',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    }),
-
-    defineField({
-      name: 'title_en',
-      title: 'Title (EN)',
+      name: 'title',
+      title: 'Title',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
@@ -26,8 +19,8 @@ export const artworkType = defineType({
       type: 'slug',
       validation: (Rule) => Rule.required(),
       options: {
-        source: 'title_en',
-        slugify: (input) =>
+        source: 'title',
+        slugify: (input = '') =>
           input
             .toLowerCase()
             .replace(/ä/g, 'ae')
@@ -55,6 +48,7 @@ export const artworkType = defineType({
       title: 'Detailbilder',
       type: 'array',
       of: [{type: 'image'}],
+      validation: (Rule) => Rule.max(4).error('Maximal 4 Detailbilder erlaubt.'),
     }),
 
     defineField({
@@ -65,8 +59,14 @@ export const artworkType = defineType({
     }),
 
     defineField({
-      name: 'technique',
-      title: 'Technik',
+      name: 'technique_de',
+      title: 'Technik (DE)',
+      type: 'string',
+    }),
+
+    defineField({
+      name: 'technique_en',
+      title: 'Technique (EN)',
       type: 'string',
     }),
 
@@ -79,13 +79,6 @@ export const artworkType = defineType({
     defineField({
       name: 'sold',
       title: 'Verkauft',
-      type: 'boolean',
-      initialValue: false,
-    }),
-
-    defineField({
-      name: 'featured',
-      title: 'Featured Artwork',
       type: 'boolean',
       initialValue: false,
     }),
@@ -105,10 +98,32 @@ export const artworkType = defineType({
     }),
   ],
 
+  // Fix für das alte title_de Ordering
+  orderings: [
+    {
+      title: 'Title (A–Z)',
+      name: 'titleAsc',
+      by: [{field: 'title', direction: 'asc'}],
+    },
+    {
+      title: 'Year (newest)',
+      name: 'yearDesc',
+      by: [{field: 'year', direction: 'desc'}],
+    },
+  ],
+
   preview: {
     select: {
-      title: 'title_de',
+      title: 'title',
       media: 'mainImage',
+      year: 'year',
+    },
+    prepare({title, media, year}) {
+      return {
+        title,
+        subtitle: year ? `Year: ${year}` : '',
+        media,
+      }
     },
   },
-});
+})
