@@ -66,6 +66,24 @@ export const seriesType = defineType({
 
       description: 'Drag & Drop sortierbar',
     }),
+
+    defineField({
+      name: 'intro_de',
+      title: 'Intro (DE)',
+      type: 'text',
+      rows: 3,
+      validation: (Rule) => Rule.required(),
+      description: '2–3 kurze Zeilen, keine Beschreibung, keine Erklärung, eher Gefühl / Stimmung',
+    }),
+
+    defineField({
+      name: 'intro_en',
+      title: 'Intro (EN)',
+      type: 'text',
+      rows: 3,
+      validation: (Rule) => Rule.required(),
+      description: '2–3 kurze Zeilen, keine Beschreibung, keine Erklärung, eher Gefühl / Stimmung',
+    }),
   ],
 
   preview: {

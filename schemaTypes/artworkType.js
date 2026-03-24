@@ -1,4 +1,4 @@
-import {defineType, defineField} from 'sanity'
+import {defineType, defineField} from 'sanity';
 
 export const artworkType = defineType({
   name: 'artwork',
