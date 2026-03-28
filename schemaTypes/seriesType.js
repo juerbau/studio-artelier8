@@ -68,6 +68,30 @@ export const seriesType = defineType({
     }),
 
     defineField({
+      name: 'previewArtworks',
+      title: 'Serien Vorschau (Übersicht)',
+      type: 'array',
+
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'artwork' }],
+          options: {
+            disableNew: true,
+          },
+        },
+      ],
+
+      validation: (Rule) =>
+        Rule.required()
+          .min(1)
+          .max(3)
+          .error('Bitte 1 bis maximal 3 Werke für die Vorschau auswählen'),
+
+      description: 'Diese Werke erscheinen in der Serienübersicht (max. 3)',
+    }),
+
+    defineField({
       name: 'intro_de',
       title: 'Intro (DE)',
       type: 'text',
