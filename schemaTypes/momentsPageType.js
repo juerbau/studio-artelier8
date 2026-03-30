@@ -1,4 +1,3 @@
-
 import {defineField, defineType} from 'sanity'
 
 export const momentsPageType = defineType({
@@ -13,7 +12,15 @@ export const momentsPageType = defineType({
       name: 'moments',
       title: 'Momente (Reihenfolge)',
       type: 'array',
-      of: [{type: 'reference', to: [{type: 'moment'}]}],
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'moment'}],
+          options: {
+            disableNew: true, // 🔥 verhindert "Create new"
+          },
+        },
+      ],
       description: 'Reihenfolge bestimmt die Darstellung auf der Seite',
     }),
   ],

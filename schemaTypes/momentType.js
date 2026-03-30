@@ -24,9 +24,9 @@ export const momentType = defineType({
     }),
 
     defineField({
-      name: 'year',
-      title: 'Jahr',
-      type: 'number',
+      name: 'date',
+      title: 'Datum',
+      type: 'string',
       validation: (Rule) => Rule.required(),
     }),
 
@@ -51,26 +51,18 @@ export const momentType = defineType({
       type: 'text',
       rows: 3,
     }),
-
-    defineField({
-      name: 'featured',
-      title: 'Hauptmoment',
-      type: 'boolean',
-      initialValue: false,
-      description: 'Wird als großes Highlight oben angezeigt',
-    }),
   ],
 
   preview: {
     select: {
       title: 'title',
       media: 'mainImage',
-      year: 'year',
+      date: 'date',
     },
-    prepare({title, media, year}) {
+    prepare({title, media, date}) {
       return {
         title,
-        subtitle: year ? `${year}` : '',
+        subtitle: date || '',
         media,
       }
     },
