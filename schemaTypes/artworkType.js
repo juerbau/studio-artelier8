@@ -36,6 +36,14 @@ export const artworkType = defineType({
     }),
 
     defineField({
+      name: 'series',
+      title: 'Serie',
+      type: 'reference',
+      to: [{type: 'series'}],
+      validation: (Rule) => Rule.required(),
+    }),
+
+    defineField({
       name: 'mainImage',
       title: 'Hauptbild',
       type: 'image',
