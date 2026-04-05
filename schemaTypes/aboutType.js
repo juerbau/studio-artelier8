@@ -29,16 +29,6 @@ export const aboutType = defineType({
       },
       description: 'Atmosphäre des Arbeitsraums oder Ausstellung',
     }),
-
-    defineField({
-      name: 'processImage',
-      title: 'Prozess Detail',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-      description: 'Detail aus dem Arbeitsprozess (keine Serie!)',
-    }),
   ],
 
   preview: {
