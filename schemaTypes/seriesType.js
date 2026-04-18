@@ -31,14 +31,6 @@ export const seriesType = defineType({
     }),
 
     defineField({
-      name: 'image',
-      title: 'Serienbild',
-      type: 'image',
-      options: {hotspot: true},
-      validation: (Rule) => Rule.required(),
-    }),
-
-    defineField({
       name: 'artworks',
       title: 'Artworks dieser Serie',
       type: 'array',
@@ -75,7 +67,7 @@ export const seriesType = defineType({
       of: [
         {
           type: 'reference',
-          to: [{ type: 'artwork' }],
+          to: [{type: 'artwork'}],
           options: {
             disableNew: true,
           },
@@ -89,6 +81,15 @@ export const seriesType = defineType({
           .error('Bitte 1 bis maximal 3 Werke für die Vorschau auswählen'),
 
       description: 'Diese Werke erscheinen in der Serienübersicht (max. 3)',
+    }),
+
+    defineField({
+      name: 'ogImage',
+      title: 'Open Graph Bild',
+      type: 'image',
+      options: {hotspot: true},
+      description:
+        'Für Social Sharing (WhatsApp, iMessage etc.). Querformat empfohlen (1200 × 630).',
     }),
 
     defineField({
@@ -113,7 +114,7 @@ export const seriesType = defineType({
   preview: {
     select: {
       title: 'title_de',
-      media: 'image',
+      media: 'previewArtworks.0.mainImage',
     },
   },
 })

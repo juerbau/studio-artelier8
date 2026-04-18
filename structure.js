@@ -7,6 +7,9 @@ export const structure = (S) =>
       S.documentTypeListItem('series').title('Series'),
       S.documentTypeListItem('moment').title('Moments'),
 
+      // Trennlinie (nur für Optik/Struktur)
+      S.divider(),
+
       // 🔹 Singletons
       S.listItem()
         .title('Serien Reihenfolge')
@@ -23,4 +26,8 @@ export const structure = (S) =>
       S.listItem()
         .title('About Page')
         .child(S.document().schemaType('aboutPage').documentId('aboutPage')),
+
+      S.listItem()
+        .title('Open Graph')
+        .child(S.document().schemaType('openGraph').documentId('openGraph')),
     ])
