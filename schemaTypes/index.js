@@ -5,7 +5,8 @@ import {homeSliderType} from './homeSliderType'
 import {aboutType} from './aboutType';
 import {momentType} from './momentType';
 import {momentsPageType} from './momentsPageType';
-import {openGraphType} from './openGraphType'
+import {openGraphType} from './openGraphType';
+import {newsletterType} from './newsletterType';
 
 
 export const schemaTypes = [
@@ -17,5 +18,5 @@ export const schemaTypes = [
   momentType,
   momentsPageType,
   openGraphType,
-]
-
+  newsletterType,
+];

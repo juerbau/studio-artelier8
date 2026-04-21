@@ -7,7 +7,11 @@ export const structure = (S) =>
       S.documentTypeListItem('series').title('Series'),
       S.documentTypeListItem('moment').title('Moments'),
 
-      // Trennlinie (nur für Optik/Struktur)
+      S.divider(),
+
+      // 🔹 Newsletter
+      S.documentTypeListItem('newsletter').title('Newsletter'),
+
       S.divider(),
 
       // 🔹 Singletons
