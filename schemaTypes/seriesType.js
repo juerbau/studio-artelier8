@@ -2,7 +2,7 @@ import {defineType, defineField} from 'sanity'
 
 export const seriesType = defineType({
   name: 'series',
-  title: 'Series',
+  title: 'Serien',
   type: 'document',
 
   fields: [

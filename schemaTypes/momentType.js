@@ -3,7 +3,7 @@ import {defineField, defineType} from 'sanity'
 
 export const momentType = defineType({
   name: 'moment',
-  title: 'Moments',
+  title: 'Momente',
   type: 'document',
 
   fields: [

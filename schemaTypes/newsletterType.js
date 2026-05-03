@@ -15,7 +15,7 @@ export const newsletterType = defineType({
 
     defineField({
       name: 'title_en',
-      title: 'Title (EN)',
+      title: 'Titel (EN)',
       type: 'string',
       validation: (Rule) => Rule.required().min(5).max(120),
     }),

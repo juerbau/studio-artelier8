@@ -3,9 +3,9 @@ export const structure = (S) =>
     .title('Content')
     .items([
       // 🔹 Collections
-      S.documentTypeListItem('artwork').title('Artworks'),
-      S.documentTypeListItem('series').title('Series'),
-      S.documentTypeListItem('moment').title('Moments'),
+      S.documentTypeListItem('artwork').title('Bilder'),
+      S.documentTypeListItem('series').title('Serien'),
+      S.documentTypeListItem('moment').title('Momente'),
 
       S.divider(),
 
@@ -24,14 +24,14 @@ export const structure = (S) =>
         .child(S.document().schemaType('homeSlider').documentId('homeSlider')),
 
       S.listItem()
-        .title('Moments Page')
+        .title('Moments Seite')
         .child(S.document().schemaType('momentsPage').documentId('momentsPage')),
 
       S.listItem()
-        .title('About Page')
+        .title('Über mich Seite')
         .child(S.document().schemaType('aboutPage').documentId('aboutPage')),
 
       S.listItem()
-        .title('Open Graph')
+        .title('Open Graph Bilder')
         .child(S.document().schemaType('openGraph').documentId('openGraph')),
     ])
