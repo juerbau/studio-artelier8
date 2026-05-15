@@ -21,6 +21,16 @@ export const newsletterType = defineType({
     }),
 
     defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      validation: (Rule) => Rule.required(),
+      options: {
+        source: 'title_en',
+      },
+    }),
+
+    defineField({
       name: 'mainImage',
       title: 'Hauptbild',
       type: 'image',

@@ -5,9 +5,6 @@
 /.pnp
 .pnp.js
 
-# JetBrains IDE (WebStorm, IntelliJ, etc.)
-.idea/
-
 # Compiled Sanity Studio
 /dist
 
