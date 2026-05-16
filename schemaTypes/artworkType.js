@@ -8,14 +8,14 @@ export const artworkType = defineType({
   fields: [
     defineField({
       name: 'title',
-      title: 'Title',
+      title: 'Titel',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
 
     defineField({
       name: 'slug',
-      title: 'Slug',
+      title: 'Browser Adresse',
       type: 'slug',
       validation: (Rule) => Rule.required(),
       options: {
@@ -66,7 +66,7 @@ export const artworkType = defineType({
 
     defineField({
       name: 'technique_en',
-      title: 'Technique (EN)',
+      title: 'Technik (EN)',
       type: 'string',
     }),
 
@@ -87,29 +87,17 @@ export const artworkType = defineType({
       name: 'description_de',
       title: 'Beschreibung (DE)',
       type: 'text',
-      rows: 4,
+      rows: 5,
+      description: 'Möglichst nicht mehr als 5 Zeilen.',
     }),
 
     defineField({
       name: 'description_en',
-      title: 'Description (EN)',
+      title: 'Beschreibung (EN)',
       type: 'text',
-      rows: 4,
+      rows: 5,
+      description: 'Möglichst nicht mehr als 5 Zeilen.',
     }),
-  ],
-
-  // Fix für das alte title_de Ordering
-  orderings: [
-    {
-      title: 'Title (A–Z)',
-      name: 'titleAsc',
-      by: [{field: 'title', direction: 'asc'}],
-    },
-    {
-      title: 'Year (newest)',
-      name: 'yearDesc',
-      by: [{field: 'year', direction: 'desc'}],
-    },
   ],
 
   preview: {

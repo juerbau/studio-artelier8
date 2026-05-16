@@ -3,7 +3,7 @@ import {defineField, defineType} from 'sanity'
 
 export const aboutType = defineType({
   name: 'aboutPage',
-  title: 'About Page',
+  title: 'About Seite',
   type: 'document',
 
   // 👉 verhindert mehrere Dokumente + kein Löschen
@@ -12,29 +12,29 @@ export const aboutType = defineType({
   fields: [
     defineField({
       name: 'portraitImage',
-      title: 'Portrait Image',
+      title: 'Portrait',
       type: 'image',
       options: {
         hotspot: true,
       },
-      description: 'Hauptportrait der Künstlerin (ruhig, reduziert)',
+      description: 'Bild von Dir.',
     }),
 
     defineField({
       name: 'studioImage',
-      title: 'Studio / Galerie Bild',
+      title: 'Studio / Galerie',
       type: 'image',
       options: {
         hotspot: true,
       },
-      description: 'Atmosphäre des Arbeitsraums oder Ausstellung',
+      description: 'Bild von Deiner Galerie.',
     }),
   ],
 
   preview: {
     prepare() {
       return {
-        title: 'About Page',
+        title: 'About Seite',
       }
     },
   },

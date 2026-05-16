@@ -21,16 +21,6 @@ export const newsletterType = defineType({
     }),
 
     defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      validation: (Rule) => Rule.required(),
-      options: {
-        source: 'title_en',
-      },
-    }),
-
-    defineField({
       name: 'mainImage',
       title: 'Hauptbild',
       type: 'image',
@@ -44,7 +34,7 @@ export const newsletterType = defineType({
       type: 'text',
       rows: 4,
       validation: (Rule) => Rule.required().min(20).max(500),
-      description: 'Ruhig, reduziert, eher Atmosphäre als Erklärung',
+      description: 'Ruhig, reduziert, eher Atmosphäre als Erklärung (max. 500 Zeichen).',
     }),
 
     defineField({
@@ -53,7 +43,7 @@ export const newsletterType = defineType({
       type: 'text',
       rows: 4,
       validation: (Rule) => Rule.required().min(20).max(500),
-      description: 'Calm, minimal, more atmosphere than explanation',
+      description: 'Ruhig, reduziert, eher Atmosphäre als Erklärung (max. 500 Zeichen).',
     }),
 
     defineField({

@@ -22,9 +22,9 @@ export const homeSliderType = defineType({
         },
       ],
 
-      validation: (Rule) => Rule.required().min(1).error('Mindestens ein Artwork auswählen'),
+      validation: (Rule) => Rule.required().min(1).error('Mindestens ein Artwork auswählen!'),
 
-      description: 'Reihenfolge bestimmt die Slider-Reihenfolge (Drag & Drop)',
+      description: 'Die Reihenfolge (drag & drop) bestimmt die Reihenfolge im Home-Slider.',
     }),
   ],
 

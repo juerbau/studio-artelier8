@@ -15,14 +15,14 @@ export const seriesType = defineType({
 
     defineField({
       name: 'title_en',
-      title: 'Title (EN)',
+      title: 'Titel (EN)',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
 
     defineField({
       name: 'slug',
-      title: 'Slug',
+      title: 'Browser Adresse',
       type: 'slug',
       validation: (Rule) => Rule.required(),
       options: {
@@ -32,7 +32,7 @@ export const seriesType = defineType({
 
     defineField({
       name: 'artworks',
-      title: 'Artworks dieser Serie',
+      title: 'Bilder zu dieser Serie',
       type: 'array',
 
       of: [
@@ -54,9 +54,9 @@ export const seriesType = defineType({
       ],
 
       validation: (Rule) =>
-        Rule.unique().error('Ein Artwork darf nur einmal in dieser Liste vorkommen'),
+        Rule.unique().error('Ein Artwork darf nur einmal in dieser Liste vorkommen!'),
 
-      description: 'Drag & Drop sortierbar',
+      description: 'Per drag & drop sortierbar.',
     }),
 
     defineField({

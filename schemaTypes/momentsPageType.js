@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const momentsPageType = defineType({
   name: 'momentsPage',
-  title: 'Moments Page',
+  title: 'Moments Seite',
   type: 'document',
 
   __experimental_actions: ['update', 'publish'],
@@ -10,7 +10,7 @@ export const momentsPageType = defineType({
   fields: [
     defineField({
       name: 'moments',
-      title: 'Momente (Reihenfolge)',
+      title: 'Momente Reihenfolge',
       type: 'array',
       of: [
         {
@@ -21,14 +21,14 @@ export const momentsPageType = defineType({
           },
         },
       ],
-      description: 'Reihenfolge bestimmt die Darstellung auf der Seite',
+      description: 'Die Reihenfolge (drag & drop) bestimmt die Reihenfolge auf der Momente Seite.',
     }),
   ],
 
   preview: {
     prepare() {
       return {
-        title: 'Moments Page',
+        title: 'Moments Seite',
       }
     },
   },

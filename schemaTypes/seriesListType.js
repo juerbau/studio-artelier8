@@ -23,9 +23,9 @@ export const seriesListType = defineType({
         },
       ],
 
-      validation: (Rule) => Rule.unique().error('Serie darf nur einmal vorkommen'),
+      validation: (Rule) => Rule.unique().error('Eine Serie darf nur max. einmal vorkommen'),
 
-      description: 'Reihenfolge bestimmt die Anzeige auf der Serienseite',
+      description: 'Die Reihenfolge (drag & drop) bestimmt die Anzeige auf der Serienseite',
     }),
   ],
 

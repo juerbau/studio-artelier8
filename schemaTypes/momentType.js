@@ -42,7 +42,7 @@ export const momentType = defineType({
       title: 'Beschreibung (DE)',
       type: 'text',
       rows: 3,
-      description: 'Kurz halten (max. 2–3 Zeilen)',
+      description: 'Möglichst kurz halten (max. 2–3 Zeilen)',
     }),
 
     defineField({
@@ -50,6 +50,7 @@ export const momentType = defineType({
       title: 'Beschreibung (EN)',
       type: 'text',
       rows: 3,
+      description: 'Möglichst kurz halten (max. 2–3 Zeilen)',
     }),
   ],
 
