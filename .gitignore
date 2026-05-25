@@ -27,3 +27,10 @@
 
 # Dotenv and similar local-only files
 *.local
+
+# -------------------------------------------------------------------
+# JetBrains IDE (WebStorm, IntelliJ, etc.)
+# -------------------------------------------------------------------
+
+# Einfachste Variante: gesamten .idea-Ordner ignorieren
+.idea/
