@@ -6,6 +6,7 @@ export const structure = (S) =>
       S.documentTypeListItem('artwork').title('Bilder'),
       S.documentTypeListItem('series').title('Serien'),
       S.documentTypeListItem('moment').title('Momente'),
+      S.documentTypeListItem('discoverGallery').title('Discover Galleries'),
 
       S.divider(),
 
@@ -15,6 +16,10 @@ export const structure = (S) =>
       S.divider(),
 
       // 🔹 Singletons
+      S.listItem()
+        .title('Discover Journey')
+        .child(S.document().schemaType('discoverJourney').documentId('discoverJourney')),
+
       S.listItem()
         .title('Serien Reihenfolge')
         .child(S.document().schemaType('seriesList').documentId('seriesList')),

@@ -7,6 +7,8 @@ import {momentType} from './momentType';
 import {momentsPageType} from './momentsPageType';
 import {openGraphType} from './openGraphType';
 import {newsletterType} from './newsletterType';
+import {discoverGalleryType} from './discoverGalleryType'
+import {discoverJourneyType} from './discoverJourneyType'
 
 
 export const schemaTypes = [
@@ -19,4 +21,6 @@ export const schemaTypes = [
   momentsPageType,
   openGraphType,
   newsletterType,
-];
+  discoverGalleryType,
+  discoverJourneyType,
+]
