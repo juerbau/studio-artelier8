@@ -7,15 +7,8 @@ export const discoverGalleryType = defineType({
 
   fields: [
     defineField({
-      name: 'title_de',
-      title: 'Titel (DE)',
-      type: 'string',
-      validation: (Rule) => Rule.required().min(5).max(120),
-    }),
-
-    defineField({
-      name: 'title_en',
-      title: 'Titel (EN)',
+      name: 'title',
+      title: 'Titel',
       type: 'string',
       validation: (Rule) => Rule.required().min(5).max(120),
     }),
@@ -59,7 +52,7 @@ export const discoverGalleryType = defineType({
 
   preview: {
     select: {
-      title: 'title_de',
+      title: 'title',
       media: 'imageTopLeft',
     },
 

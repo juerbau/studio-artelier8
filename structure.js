@@ -7,6 +7,7 @@ export const structure = (S) =>
       S.documentTypeListItem('series').title('Serien'),
       S.documentTypeListItem('moment').title('Momente'),
       S.documentTypeListItem('discoverGallery').title('Discover Galleries'),
+      S.documentTypeListItem('beforeAfterGallery').title('Vorher / Nachher Slider'),
 
       S.divider(),
 
@@ -16,10 +17,6 @@ export const structure = (S) =>
       S.divider(),
 
       // 🔹 Singletons
-      S.listItem()
-        .title('Discover Journey')
-        .child(S.document().schemaType('discoverJourney').documentId('discoverJourney')),
-
       S.listItem()
         .title('Serien Reihenfolge')
         .child(S.document().schemaType('seriesList').documentId('seriesList')),
@@ -39,4 +36,12 @@ export const structure = (S) =>
       S.listItem()
         .title('Open Graph Bilder')
         .child(S.document().schemaType('openGraph').documentId('openGraph')),
+
+      S.listItem()
+        .title('Discover Journey')
+        .child(S.document().schemaType('discoverJourney').documentId('discoverJourney')),
+
+      S.listItem()
+        .title('BeforeAfter Journey')
+        .child(S.document().schemaType('beforeAfterJourney').documentId('beforeAfterJourney')),
     ])

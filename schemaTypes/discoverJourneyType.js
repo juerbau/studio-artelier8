@@ -14,6 +14,9 @@ export const discoverJourneyType = defineType({
         {
           type: 'reference',
           to: [{type: 'discoverGallery'}],
+          options: {
+            disableNew: true,
+          },
         },
       ],
       validation: (Rule) => Rule.required().min(1),

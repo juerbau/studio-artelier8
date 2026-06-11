@@ -9,6 +9,8 @@ import {openGraphType} from './openGraphType';
 import {newsletterType} from './newsletterType';
 import {discoverGalleryType} from './discoverGalleryType'
 import {discoverJourneyType} from './discoverJourneyType'
+import {beforeAfterGalleryType} from './beforeAfterGalleryType'
+import {beforeAfterJourneyType} from './beforeAfterJourneyType'
 
 
 export const schemaTypes = [
@@ -23,4 +25,6 @@ export const schemaTypes = [
   newsletterType,
   discoverGalleryType,
   discoverJourneyType,
+  beforeAfterGalleryType,
+  beforeAfterJourneyType,
 ]
