@@ -18,6 +18,9 @@ export const beforeAfterJourneyType = defineType({
               type: 'beforeAfterGallery',
             },
           ],
+          options: {
+            disableNew: true, // 🔥 verhindert "Create new"
+          },
         },
       ],
       options: {
@@ -25,4 +28,13 @@ export const beforeAfterJourneyType = defineType({
       },
     }),
   ],
+
+  preview: {
+    prepare() {
+      return {
+        title: 'Vorher / Nachher Journey',
+        subtitle: 'Reihenfolge der Gestaltungsreise',
+      }
+    },
+  },
 })
