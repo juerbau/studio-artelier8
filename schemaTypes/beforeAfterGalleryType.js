@@ -29,6 +29,21 @@ export const beforeAfterGalleryType = defineType({
         hotspot: true,
       },
     }),
+    defineField({
+      name: "displayFormat",
+      title: "Darstellungsformat",
+      type: "string",
+      initialValue: "landscape",
+      options: {
+        list: [
+          { title: "Querformat / 16:9", value: "landscape" },
+          { title: "Quadratisch", value: "square" },
+          { title: "Hochformat", value: "portrait" },
+        ],
+        layout: "radio",
+      },
+      validation: (Rule) => Rule.required(),
+    }),
   ],
 
   preview: {
