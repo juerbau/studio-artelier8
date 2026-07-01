@@ -33,8 +33,8 @@ export const newsletterType = defineType({
       title: 'Text (DE)',
       type: 'text',
       rows: 4,
-      validation: (Rule) => Rule.required().min(20).max(500),
-      description: 'Ruhig, reduziert, eher Atmosphäre als Erklärung (max. 500 Zeichen).',
+      validation: (Rule) => Rule.required().min(20),
+      description: 'Ruhig, reduziert und persönlich. Lieber Atmosphäre als Erklärung.',
     }),
 
     defineField({
@@ -42,8 +42,8 @@ export const newsletterType = defineType({
       title: 'Text (EN)',
       type: 'text',
       rows: 4,
-      validation: (Rule) => Rule.required().min(20).max(500),
-      description: 'Ruhig, reduziert, eher Atmosphäre als Erklärung (max. 500 Zeichen).',
+      validation: (Rule) => Rule.required().min(20),
+      description: 'Ruhig, reduziert und persönlich. Lieber Atmosphäre als Erklärung.',
     }),
 
     defineField({
