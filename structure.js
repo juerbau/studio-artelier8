@@ -44,4 +44,8 @@ export const structure = (S) =>
       S.listItem()
         .title('BeforeAfter Journey')
         .child(S.document().schemaType('beforeAfterJourney').documentId('beforeAfterJourney')),
+
+      S.listItem()
+        .title('Für Dich Bilder')
+        .child(S.document().schemaType('forYouImages').documentId('forYouImages')),
     ])

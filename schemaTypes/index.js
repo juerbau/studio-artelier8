@@ -11,6 +11,7 @@ import {discoverGalleryType} from './discoverGalleryType'
 import {discoverJourneyType} from './discoverJourneyType'
 import {beforeAfterGalleryType} from './beforeAfterGalleryType'
 import {beforeAfterJourneyType} from './beforeAfterJourneyType'
+import {forYouType} from './forYouType'
 
 
 export const schemaTypes = [
@@ -27,4 +28,5 @@ export const schemaTypes = [
   discoverJourneyType,
   beforeAfterGalleryType,
   beforeAfterJourneyType,
+  forYouType,
 ]
